@@ -1,35 +1,24 @@
-# main:
-#   # - title: Multi-modal Auto-regressive Modeling via Visual Words
-#   #   authors: <strong>Tianshuo Peng†</strong>, Zuchao Li†*, Lefei Zhang, hai zhao, Ping Wang, Bo Du (*Corresponding authors, †Equal contribution)
-#   #   # conference_short: AAAI
-#   #   # conference: The 38th Annual AAAI Conference on Artificial Intelligence <strong>(AAAI)</strong>, 2024.
-#   #   pdf: https://openreview.net/pdf?id=No1aYanRsX3
-#   #   # code: https://github.com/pengts/DQPSA
-#   #   # bibtex: https://bib.yliu.me/MICCAI23.txt
-#   #   image: ./assets/img/ACL-2024.png
-#   #   notes: Preprint
-
-# - title: A Novel Energy Based Model Mechanism for Multi-Modal Aspect-Based Sentiment Analysis
-#     authors: <strong>Tianshuo Peng†</strong>, Zuchao Li†*, Ping Wang, Lefei Zhang, and Hai Zhao (*Corresponding authors, †Equal contribution)
-#     conference_short: AAAI
-#     conference: The 38th Annual AAAI Conference on Artificial Intelligence <strong>(AAAI)</strong>, 2024.
-#     pdf: https://arxiv.org/pdf/2312.08084.pdf
-#     code: https://github.com/pengts/DQPSA
-#     # bibtex: https://bib.yliu.me/MICCAI23.txt
-#     image: ./assets/img/AAAI-2024.png
-#     notes: Poster Presentation
-
-#   - title: "FSUIE: A Novel Fuzzy Span Mechanism for Universal Information Extraction"
-#     authors: <strong>Tianshuo Peng†</strong>, Zuchao Li†*, Lefei Zhang, Bo Du, Hai Zhao (*Corresponding authors, †Equal contribution)
-#     conference_short: ACL
-#     conference: The 61st Annual Meeting of the Association for Computational Linguistics <strong>(ACL)</strong>, 2023.
-#     pdf: https://aclanthology.org/2023.acl-long.902.pdf
-#     code: https://github.com/pengts/FSUIE
-#     # bibtex: https://bib.yliu.me/MICCAI23.txt
-#     image: ./assets/img/ACL-2023.png
-#     notes: Poster Presentation
-
 main:
+  # - title: Multi-modal Auto-regressive Modeling via Visual Words
+  #   authors: <strong>Tianshuo Peng†</strong>, Zuchao Li†*, Lefei Zhang, hai zhao, Ping Wang, Bo Du (*Corresponding authors, †Equal contribution)
+  #   # conference_short: AAAI
+  #   # conference: The 38th Annual AAAI Conference on Artificial Intelligence <strong>(AAAI)</strong>, 2024.
+  #   pdf: https://openreview.net/pdf?id=No1aYanRsX3
+  #   # code: https://github.com/pengts/DQPSA
+  #   # bibtex: https://bib.yliu.me/MICCAI23.txt
+  #   image: ./assets/img/ACL-2024.png
+  #   notes: Preprint
+
+  - title: A Novel Energy Based Model Mechanism for Multi-Modal Aspect-Based Sentiment Analysis
+    authors: <strong>Tianshuo Peng†</strong>, Zuchao Li†*, Ping Wang, Lefei Zhang, and Hai Zhao (*Corresponding authors, †Equal contribution)
+    conference_short: AAAI
+    conference: The 38th Annual AAAI Conference on Artificial Intelligence <strong>(AAAI)</strong>, 2024.
+    pdf: https://arxiv.org/pdf/2312.08084.pdf
+    code: https://github.com/pengts/DQPSA
+    # bibtex: https://bib.yliu.me/MICCAI23.txt
+    image: ./assets/img/AAAI-2024.png
+    notes: Poster Presentation
+
   - title: "FSUIE: A Novel Fuzzy Span Mechanism for Universal Information Extraction"
     authors: <strong>Tianshuo Peng†</strong>, Zuchao Li†*, Lefei Zhang, Bo Du, Hai Zhao (*Corresponding authors, †Equal contribution)
     conference_short: ACL
@@ -40,12 +29,23 @@ main:
     image: ./assets/img/ACL-2023.png
     notes: Poster Presentation
 
+# main:
+#   - title: "FSUIE: A Novel Fuzzy Span Mechanism for Universal Information Extraction"
+#     authors: <strong>Tianshuo Peng†</strong>, Zuchao Li†*, Lefei Zhang, Bo Du, Hai Zhao (*Corresponding authors, †Equal contribution)
+#     conference_short: ACL
+#     conference: The 61st Annual Meeting of the Association for Computational Linguistics <strong>(ACL)</strong>, 2023.
+#     pdf: https://aclanthology.org/2023.acl-long.902.pdf
+#     code: https://github.com/pengts/FSUIE
+#     # bibtex: https://bib.yliu.me/MICCAI23.txt
+#     image: ./assets/img/ACL-2023.png
+#     notes: Poster Presentation
 
-  - title: A Novel Energy Based Model Mechanism for Multi-Modal Aspect-Based Sentiment Analysis
-    authors: <strong>Tianshuo Peng†</strong>, Zuchao Li†*, Ping Wang, Lefei Zhang, and Hai Zhao (*Corresponding authors, †Equal contribution)
-    pdf: https://arxiv.org/pdf/2312.08084.pdf
-    code: https://github.com/pengts/DQPSA
-    # bibtex: https://bib.yliu.me/MICCAI23.txt
-    image: ./assets/img/AAAI-2024.png
-    notes: Poster Presentation
+
+#   - title: A Novel Energy Based Model Mechanism for Multi-Modal Aspect-Based Sentiment Analysis
+#     authors: <strong>Tianshuo Peng†</strong>, Zuchao Li†*, Ping Wang, Lefei Zhang, and Hai Zhao (*Corresponding authors, †Equal contribution)
+#     pdf: https://arxiv.org/pdf/2312.08084.pdf
+#     code: https://github.com/pengts/DQPSA
+#     # bibtex: https://bib.yliu.me/MICCAI23.txt
+#     image: ./assets/img/AAAI-2024.png
+#     notes: Poster Presentation
 
