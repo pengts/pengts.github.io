@@ -6,7 +6,7 @@ main:
     conference: The 38th Annual AAAI Conference on Artificial Intelligence <strong>(AAAI)</strong>, 2024.
     pdf: https://arxiv.org/pdf/2312.08084.pdf
     code: https://github.com/pengts/DQPSA
-    # bibtex: https://bib.yliu.me/MICCAI23.txt
+    bibtex: https://bib.yliu.me/MICCAI23.txt
     image: ./assets/img/teaser_example_2.png
     notes: Poster Presentation
 
@@ -16,7 +16,7 @@ main:
     conference: The 61st Annual Meeting of the Association for Computational Linguistics <strong>(ACL)</strong>, 2023.
     pdf: https://aclanthology.org/2023.acl-long.902.pdf
     code: https://github.com/pengts/FSUIE
-    # page: https://class-il.mpi-inf.mpg.de/mnemonics/
-    # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
+    page: https://class-il.mpi-inf.mpg.de/mnemonics/
+    bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
     notes: Poster Presentation
     image: ./assets/img/teaser_example.png
