@@ -7,30 +7,9 @@ main:
     pdf: https://aclanthology.org/2023.acl-long.902.pdf
     code: https://github.com/pengts/FSUIE
     # bibtex: https://bib.yliu.me/MICCAI23.txt
-    image: ./assets/img/teaser_example_2.png
+    image: ./assets/img/ACL-2023.png
     notes: Poster Presentation
 
-  # - title: "Mnemonics Training: Multi-Class Incremental Learning without Forgetting"
-  #   authors: <strong>Yaoyao Liu</strong>, Yuting Su, An-An Liu, Bernt Schiele, Qianru Sun
-  #   conference_short: CVPR
-  #   conference: IEEE/CVF Conference on Computer Vision and Pattern Recognition <strong>(CVPR)</strong>, 2020.
-  #   pdf: https://arxiv.org/pdf/2002.10211.pdf
-  #   code: https://github.com/yaoyao-liu/class-incremental-learning/tree/main/mnemonics-training
-  #   page: https://class-il.mpi-inf.mpg.de/mnemonics/
-  #   bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
-  #   notes: Oral Presentation
-  #   image: ./assets/img/teaser_example.png
-
- # - title: FSUIE: A Novel Fuzzy Span Mechanism for Universal Information Extraction
- #    authors: <strong>Tianshuo Peng†</strong>, Zuchao Li†*, Lefei Zhang, Bo Du, Hai Zhao (*Corresponding authors, †Equal contribution)
- #    conference_short: ACL
- #    conference: The 61st Annual Meeting of the Association for Computational Linguistics <strong>(ACL)</strong>, 2023.
- #    pdf: https://aclanthology.org/2023.acl-long.902.pdf
- #    code: https://github.com/pengts/FSUIE
- #    # page: https://class-il.mpi-inf.mpg.de/mnemonics/
- #    # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
- #    notes: Poster Presentation
- #    image: ./assets/img/teaser_example.png
 
   - title: A Novel Energy Based Model Mechanism for Multi-Modal Aspect-Based Sentiment Analysis
     authors: <strong>Tianshuo Peng†</strong>, Zuchao Li†*, Ping Wang, Lefei Zhang, and Hai Zhao (*Corresponding authors, †Equal contribution)
@@ -39,5 +18,5 @@ main:
     pdf: https://arxiv.org/pdf/2312.08084.pdf
     code: https://github.com/pengts/DQPSA
     # bibtex: https://bib.yliu.me/MICCAI23.txt
-    image: ./assets/img/teaser_example_2.png
+    image: ./assets/img/AAAI-2024.png
     notes: Poster Presentation
