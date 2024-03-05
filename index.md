@@ -4,7 +4,7 @@ layout: homepage
 
 ## About Me
 
-My name is Tianshuo Peng (彭天硕). I am currently a junior undergraduate student at the [School of Computer Science](https://cs.whu.edu.cn/), [Wuhan University (WHU)](https://www.whu.edu.cn/). My advisor is Associate Professor Zuchao Li. 
+My name is Tianshuo Peng (彭天硕). I am currently a junior undergraduate student at the [School of Computer Science](https://cs.whu.edu.cn/), [Wuhan University (WHU)](https://www.whu.edu.cn/). My advisor is Associate Professor [Zuchao Li](https://zcli-charlie.github.io/). 
 
 My research interests lie in multi-modal information perception and understanding, especially vision-language understanding. My goal is to build an efficient, unified, and versatile intelligent system for understanding and generating content in any modality.
 
