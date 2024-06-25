@@ -8,7 +8,8 @@ My name is <strong>Tianshuo Peng (彭天硕)</strong>. I am currently a junior u
 
 My research interests lie in multi-modal perception and understanding, especially vision-language understanding. My goal is to build an efficient, unified, and versatile intelligent system for understanding and generating content in any modality.
 
-👋👋👋 I am currently actively seeking opportunities for a Ph.D., Research Assistant, or internship positions related to <strong>Multi-Modal Understanding, Multi-Modal Large Language Models and Natural Language Processing</strong>. I am also open to any potential discussions or collaboration opportunities. If you are interested in my work or have any collaboration intentions, please feel free to email me without hesitation.
+👋👋👋 I am open to any potential discussions or collaboration opportunities. If you are interested in my work or have any collaboration intentions, please feel free to email me without hesitation.
+
 
 ## Research Interests
 - **Multi-Modal understanding and generating**: Multi-Modal Representation Learning, Visual-Language Pretraining, Visual Generation
