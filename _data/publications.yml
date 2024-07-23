@@ -7,7 +7,7 @@ main:
     code: https://github.com/pengts/VW-LMM
     # bibtex: https://bib.yliu.me/MICCAI23.txt
     image: ./assets/img/ACL-2024.png
-    notes: Preprint
+    notes: Poster Presentation
 
   - title: A Novel Energy Based Model Mechanism for Multi-Modal Aspect-Based Sentiment Analysis
     authors: <strong>Tianshuo Peng†</strong>, Zuchao Li†*, Ping Wang, Lefei Zhang, and Hai Zhao (*Corresponding authors, †Equal contribution)
