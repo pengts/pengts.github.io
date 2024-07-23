@@ -18,7 +18,8 @@ My research interests lie in multi-modal perception and understanding, especiall
 
 ## News
 
-- **[Dec. 2023]** Our paper about multi-modal aspect based sentiment analysis is accepted to AAAI 2024. The first step towards the multi-modal domain!
+- **[Jul. 2024]** Our paper about large multi-modal models is accepted to MM 2024. Providing some interesting discussion about how different modalities existing in LMMs.
+- **[Dec. 2023]** Our paper about multi-modal aspect based sentiment analysis is accepted to AAAI 2024. Interesting discussion provided to reveal how LMMs see
 - **[May. 2023]** Our paper about information extraction is accepted to ACL 2023. This moment means a lot for me!
 
 {% include_relative _includes/publications.md %}
