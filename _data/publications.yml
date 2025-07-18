@@ -6,7 +6,7 @@ main:
     pdf: https://arxiv.org/pdf/2505.21327
     code: https://github.com/Alpha-Innovator/MME-Reasoning
     project page: https://alpha-innovator.github.io/mmereasoning.github.io/
-    image: ./assets/img/mme-reasoning.png
+    image: ./assets/img/mmereasoning.png
     # notes: Poster Presentation
 
   - title: "Chimera: Improving Generalist Model with Domain-Specific Experts"
