@@ -1,4 +1,24 @@
 main:
+  - title: "MME-Reasoning: A Comprehensive Benchmark for Logical Reasoning in MLLMs"
+    authors: Jiakang Yuan†, <strong>Tianshuo Peng†</strong>, Yilei Jiang, Yiting Lu, Renrui Zhang, Kaituo Feng, Chaoyou Fu, Tao Chen*, Lei Bai, Bo Zhang*, Xiangyu Yue (*Corresponding authors, †Equal contribution)
+    conference_short: Preprint
+    # conference: International Conference on Computer Vision <strong>(ICCV)</strong>, 2025.
+    pdf: https://arxiv.org/pdf/2505.21327
+    code: https://github.com/Alpha-Innovator/MME-Reasoning
+    project page: https://alpha-innovator.github.io/mmereasoning.github.io/
+    image: ./assets/img/mme-reasoning.png
+    # notes: Poster Presentation
+
+  - title: "Chimera: Improving Generalist Model with Domain-Specific Experts"
+    authors: <strong>Tianshuo Peng†</strong>, Mingsheng Li†, Jiakang Yuan, Hongbin Zhou, Renqiu Xia, Renrui Zhang, Lei Bai, Song Mao, Bin Wang, Aojun Zhou, Botian Shi, Tao Chen, Bo Zhang*, Xiangyu Yue* (*Corresponding authors, †Equal contribution)
+    conference_short: ICCV
+    conference: International Conference on Computer Vision <strong>(ICCV)</strong>, 2025.
+    pdf: https://arxiv.org/abs/2412.05983
+    code: https://github.com/Alpha-Innovator/Chimera
+    project page: https://alpha-innovator.github.io/chimera_page/
+    image: ./assets/img/ICCV-2025.png
+    # notes: Poster Presentation
+
   - title: Multi-modal Auto-regressive Modeling via Visual Tokens
     authors: <strong>Tianshuo Peng†</strong>, Zuchao Li†*, Lefei Zhang, Hai Zhao, Ping Wang, Bo Du (*Corresponding authors, †Equal contribution)
     conference_short: ACM MM
@@ -28,5 +48,8 @@ main:
     # bibtex: https://bib.yliu.me/MICCAI23.txt
     image: ./assets/img/ACL-2023.png
     notes: Poster Presentation
+
+
+
 
 
