@@ -4,7 +4,7 @@ layout: homepage
 
 ## About Me
 
-My name is <strong>Tianshuo Peng (彭天硕)</strong>. I am a PhD candidate at CUHK [MultiMedia Lab](https://mmlab.ie.cuhk.edu.hk/), under the supervision of [Prof. Xiangyu Yue](https://xyue.io/). Before that, I obtained my bachelor degree at the [School of Computer Science](https://cs.whu.edu.cn/), [Wuhan University (WHU)](https://www.whu.edu.cn/), advised by [Prof. Zuchao Li](https://zcli-charlie.github.io/) and [Prof. Lefei Zhang](https://scholar.google.com/citations?user=BLKHwNwAAAAJ). 
+My name is <strong>Tianshuo Peng (彭天硕)</strong>. I am a 1st year PhD student at CUHK [MultiMedia Lab](https://mmlab.ie.cuhk.edu.hk/), under the supervision of [Prof. Xiangyu Yue](https://xyue.io/). Before that, I obtained my bachelor degree at the [School of Computer Science](https://cs.whu.edu.cn/), [Wuhan University (WHU)](https://www.whu.edu.cn/), advised by [Prof. Zuchao Li](https://zcli-charlie.github.io/) and [Prof. Lefei Zhang](https://scholar.google.com/citations?user=BLKHwNwAAAAJ). 
 Currently, I'm a research intern in the [Shanghai Artificial Intelligence Laboratory](https://www.shlab.org.cn/), collaborate with [Bo Zhang](https://bobrown.github.io/boZhang.github.io/).
 
 My research interests lie in multi-modal perception and understanding, especially vision-language understanding. My goal is to build an efficient, unified, and versatile intelligent system for understanding and generating content in any modality.
