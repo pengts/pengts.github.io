@@ -19,9 +19,9 @@ github_link: https://github.com/pengts
 
 # Images (e.g., your profile picture and your website's favicon) 
 # "favicon" and "favicon_dark" are used for the light and dark modes, respectively. 
-avatar: ./assets/img/my_pic_24-5-1.jpg
-favicon: ./assets/img/symbol.png
-favicon_dark: ./assets/img/symbol.png
+avatar: ./assets/img/my_pic_2025-10.JPG
+favicon: ./assets/img/university_logo_small.jpg
+favicon_dark: ./assets/img/university_logo_small.jpg
 
 # Footnote
 # You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."
