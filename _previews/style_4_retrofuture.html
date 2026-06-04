@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style 4 - Retro-Futurism</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Outfit:wght@200;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1b1b1f;
+  --surface: #232328;
+  --panel: #2a2a30;
+  --text: #eae8e3;
+  --dim: #908e89;
+  --orange: #ff6b2b;
+  --orange-glow: rgba(255,107,43,0.12);
+  --cream: #f0ead6;
+  --teal: #2dd4bf;
+  --line: rgba(255,255,255,0.07);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, 'Space Grotesk', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scanline + radial atmosphere */
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.008) 2px,
+      rgba(255,255,255,0.008) 4px
+    ),
+    radial-gradient(ellipse 900px 500px at 30% 20%, rgba(255,107,43,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 700px 700px at 75% 85%, rgba(45,212,191,0.03) 0%, transparent 60%);
+}
+
+/* Geometric deco element */
+.deco-ring {
+  position: fixed;
+  top: -200px;
+  right: -200px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  pointer-events: none;
+  z-index: 0;
+  animation: spin 60s linear infinite;
+}
+
+.deco-ring::before {
+  content: '';
+  position: absolute;
+  inset: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+}
+
+.deco-ring::after {
+  content: '';
+  position: absolute;
+  inset: 80px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255,107,43,0.1);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+/* Top navigation bar */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 70px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  animation: fadeSlide 0.7s ease both;
+}
+
+.nav-logo {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: -0.03em;
+  color: var(--cream);
+}
+
+.nav-logo span {
+  color: var(--orange);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--orange);
+}
+
+/* Hero section */
+.hero {
+  margin-bottom: 80px;
+  animation: fadeSlide 0.7s ease 0.1s both;
+}
+
+.hero-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--orange);
+}
+
+.hero h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 4.2rem;
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.04em;
+  margin-bottom: 24px;
+}
+
+.hero h1 .line2 {
+  color: var(--dim);
+  font-weight: 200;
+  font-size: 3.2rem;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--dim);
+  max-width: 560px;
+  font-weight: 300;
+}
+
+.hero-desc strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Stats row */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-bottom: 70px;
+  animation: fadeSlide 0.7s ease 0.2s both;
+}
+
+.stat-cell {
+  background: var(--surface);
+  padding: 24px 20px;
+  text-align: center;
+  border: 1px solid var(--line);
+  transition: all 0.3s ease;
+}
+
+.stat-cell:hover {
+  background: var(--panel);
+  border-color: var(--orange-glow);
+  transform: translateY(-2px);
+}
+
+.stat-cell .number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-cell .label {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  font-weight: 500;
+}
+
+/* Section */
+.section {
+  margin-bottom: 60px;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  animation: fadeSlide 0.6s ease 0.3s both;
+}
+
+.section-head .icon-box {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+.section-head h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+/* Publication list */
+.pub-entry {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  transition: all 0.3s ease;
+  animation: fadeSlide 0.6s ease both;
+}
+
+.pub-entry:nth-child(2) { animation-delay: 0.35s; }
+.pub-entry:nth-child(3) { animation-delay: 0.4s; }
+.pub-entry:nth-child(4) { animation-delay: 0.45s; }
+.pub-entry:nth-child(5) { animation-delay: 0.5s; }
+
+.pub-entry:hover {
+  padding-left: 16px;
+  background: linear-gradient(90deg, var(--orange-glow) 0%, transparent 60%);
+}
+
+.pub-entry:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.pub-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.pub-badge .venue {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--teal);
+}
+
+.pub-badge .year {
+  font-size: 0.62rem;
+  color: var(--dim);
+  font-weight: 300;
+}
+
+.pub-content .title {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 6px;
+  color: var(--cream);
+}
+
+.pub-content .authors {
+  font-size: 0.78rem;
+  color: var(--dim);
+  font-weight: 300;
+}
+
+.pub-content .authors .me {
+  color: var(--orange);
+  font-weight: 500;
+}
+
+/* Bottom CTA */
+.bottom-cta {
+  margin-top: 80px;
+  padding: 40px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: fadeSlide 0.7s ease 0.6s both;
+}
+
+.bottom-cta .text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.bottom-cta .text span {
+  color: var(--dim);
+  font-weight: 200;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.cta-btn {
+  padding: 10px 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  box-shadow: 0 0 20px var(--orange-glow);
+}
+
+.cta-btn.primary {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--bg);
+}
+
+.cta-btn.primary:hover {
+  background: transparent;
+  color: var(--orange);
+}
+
+/* Footer */
+.footer-note {
+  margin-top: 50px;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--dim);
+  text-align: center;
+  opacity: 0.5;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+</style>
+</head>
+<body>
+<div class="atmosphere"></div>
+<div class="deco-ring"></div>
+<div class="container">
+  <nav class="nav-bar">
+    <div class="nav-logo">TS<span>.</span></div>
+    <div class="nav-links">
+      <a href="#">Research</a>
+      <a href="#">Publications</a>
+      <a href="#">CV</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-eyebrow">PhD Candidate / MMLab, CUHK</div>
+    <h1>
+      Tianshuo Peng
+      <br><span class="line2">Multi-Modal Intelligence</span>
+    </h1>
+    <p class="hero-desc">
+      Building <strong>efficient and unified intelligent systems</strong> for understanding
+      and generating content across modalities. Focused on multi-agent collaboration,
+      visual-language reasoning, and multi-modal representation learning.
+    </p>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-cell">
+      <div class="number">5</div>
+      <div class="label">Publications</div>
+    </div>
+    <div class="stat-cell">
+      <div class="number">3</div>
+      <div class="label">Top Venues</div>
+    </div>
+    <div class="stat-cell">
+      <div class="number">1st</div>
+      <div class="label">Year PhD</div>
+    </div>
+    <div class="stat-cell">
+      <div class="number">25</div>
+      <div class="label">Since</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <div class="icon-box">P</div>
+      <h2>Selected Publications</h2>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-badge">
+        <span class="venue">ICCV</span>
+        <span class="year">2025</span>
+      </div>
+      <div class="pub-content">
+        <div class="title">Chimera: Improving Generalist Model with Domain-Specific Experts</div>
+        <div class="authors"><span class="me">Tianshuo Peng</span>, Mingsheng Li, Jiakang Yuan, et al.</div>
+      </div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-badge">
+        <span class="venue">Preprint</span>
+        <span class="year">2025</span>
+      </div>
+      <div class="pub-content">
+        <div class="title">MME-Reasoning: A Comprehensive Benchmark for Logical Reasoning in MLLMs</div>
+        <div class="authors">Jiakang Yuan, <span class="me">Tianshuo Peng</span>, Yilei Jiang, et al.</div>
+      </div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-badge">
+        <span class="venue">ACM MM</span>
+        <span class="year">2024</span>
+      </div>
+      <div class="pub-content">
+        <div class="title">Multi-modal Auto-regressive Modeling via Visual Tokens</div>
+        <div class="authors"><span class="me">Tianshuo Peng</span>, Zuchao Li, Lefei Zhang, et al.</div>
+      </div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-badge">
+        <span class="venue">AAAI</span>
+        <span class="year">2024</span>
+      </div>
+      <div class="pub-content">
+        <div class="title">A Novel Energy Based Model Mechanism for Multi-Modal Aspect-Based Sentiment Analysis</div>
+        <div class="authors"><span class="me">Tianshuo Peng</span>, Zuchao Li, Ping Wang, et al.</div>
+      </div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-badge">
+        <span class="venue">ACL</span>
+        <span class="year">2023</span>
+      </div>
+      <div class="pub-content">
+        <div class="title">FSUIE: A Novel Fuzzy Span Mechanism for Universal Information Extraction</div>
+        <div class="authors"><span class="me">Tianshuo Peng</span>, Zuchao Li, Lefei Zhang, et al.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-cta">
+    <div class="text">Let's connect <span>/ open for collaboration</span></div>
+    <div class="cta-buttons">
+      <a href="#" class="cta-btn">Scholar</a>
+      <a href="#" class="cta-btn">GitHub</a>
+      <a href="#" class="cta-btn primary">Email</a>
+    </div>
+  </div>
+
+  <div class="footer-note">Style Preview 4 / Retro-Futurism</div>
+</div>
+</body>
+</html>

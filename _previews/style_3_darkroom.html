@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style 3 - Darkroom</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --void: #0a0a0f;
+  --surface: #13131a;
+  --elevated: #1c1c26;
+  --text: #e8e4dd;
+  --muted: #7a7680;
+  --glow: #6ee7b7;
+  --glow-dim: rgba(110,231,183,0.15);
+  --warm: #f5deb3;
+  --line: rgba(255,255,255,0.06);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Libre Baskerville', serif;
+  background: var(--void);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Atmospheric background */
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 800px 600px at 20% 30%, rgba(110,231,183,0.03) 0%, transparent 70%),
+    radial-gradient(ellipse 600px 800px at 80% 70%, rgba(110,231,183,0.02) 0%, transparent 70%),
+    radial-gradient(ellipse 1200px 400px at 50% 100%, rgba(245,222,179,0.02) 0%, transparent 50%);
+}
+
+/* Grain overlay */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.3;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 100px 40px;
+}
+
+/* Header */
+.header {
+  margin-bottom: 80px;
+  text-align: center;
+  animation: emerge 1.2s ease both;
+}
+
+.header .overline {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--glow);
+  margin-bottom: 24px;
+  display: block;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.header h1 .glow-text {
+  background: linear-gradient(135deg, var(--glow), var(--warm));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header .tagline {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--muted);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Divider */
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--glow);
+  margin: 50px auto;
+  position: relative;
+  animation: emerge 1.2s ease 0.2s both;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--glow);
+  border-radius: 50%;
+  background: var(--void);
+}
+
+/* Section */
+.section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 30px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  animation: emerge 1s ease 0.3s both;
+}
+
+/* Publication cards */
+.pub-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 24px 28px;
+  margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: start;
+  transition: all 0.4s ease;
+  animation: emerge 0.8s ease both;
+}
+
+.pub-card:nth-child(2) { animation-delay: 0.35s; }
+.pub-card:nth-child(3) { animation-delay: 0.45s; }
+.pub-card:nth-child(4) { animation-delay: 0.55s; }
+.pub-card:nth-child(5) { animation-delay: 0.65s; }
+
+.pub-card:hover {
+  border-color: var(--glow-dim);
+  background: var(--elevated);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(110,231,183,0.04);
+}
+
+.pub-card .title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.pub-card .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.pub-card .venue {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--glow);
+  background: var(--glow-dim);
+  padding: 4px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  align-self: start;
+  margin-top: 4px;
+}
+
+/* Contact strip */
+.contact-strip {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+  animation: emerge 1s ease 0.7s both;
+}
+
+.contact-strip a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.contact-strip a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--glow);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.contact-strip a:hover {
+  color: var(--glow);
+}
+
+.contact-strip a:hover::after {
+  transform: scaleX(1);
+}
+
+.footer-note {
+  margin-top: 60px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  text-align: center;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+@keyframes emerge {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+<body>
+<div class="atmosphere"></div>
+<div class="grain"></div>
+<div class="container">
+  <div class="header">
+    <span class="overline">Multi-Modal AI Research</span>
+    <h1>Tianshuo <span class="glow-text">Peng</span></h1>
+    <p class="tagline">
+      Building efficient, unified intelligent systems for understanding
+      and generating content across modalities.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-title">Selected Publications</div>
+    <div class="pub-card">
+      <div>
+        <div class="title">Chimera: Improving Generalist Model with Domain-Specific Experts</div>
+        <div class="meta">Tianshuo Peng, Mingsheng Li, et al.</div>
+      </div>
+      <span class="venue">ICCV 2025</span>
+    </div>
+    <div class="pub-card">
+      <div>
+        <div class="title">MME-Reasoning: A Comprehensive Benchmark for Logical Reasoning in MLLMs</div>
+        <div class="meta">Jiakang Yuan, Tianshuo Peng, et al.</div>
+      </div>
+      <span class="venue">Preprint</span>
+    </div>
+    <div class="pub-card">
+      <div>
+        <div class="title">Multi-modal Auto-regressive Modeling via Visual Tokens</div>
+        <div class="meta">Tianshuo Peng, Zuchao Li, et al.</div>
+      </div>
+      <span class="venue">MM 2024</span>
+    </div>
+    <div class="pub-card">
+      <div>
+        <div class="title">A Novel Energy Based Model Mechanism for Multi-Modal Aspect-Based Sentiment Analysis</div>
+        <div class="meta">Tianshuo Peng, Zuchao Li, et al.</div>
+      </div>
+      <span class="venue">AAAI 2024</span>
+    </div>
+    <div class="pub-card">
+      <div>
+        <div class="title">FSUIE: A Novel Fuzzy Span Mechanism for Universal Information Extraction</div>
+        <div class="meta">Tianshuo Peng, Zuchao Li, et al.</div>
+      </div>
+      <span class="venue">ACL 2023</span>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <a href="#">Google Scholar</a>
+    <a href="#">GitHub</a>
+    <a href="#">Curriculum Vitae</a>
+    <a href="#">Email</a>
+  </div>
+
+  <div class="footer-note">Style Preview 3 / Darkroom</div>
+</div>
+</body>
+</html>

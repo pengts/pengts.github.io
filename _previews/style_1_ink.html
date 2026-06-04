@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style 1 - Ink Scholar</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a2e;
+  --paper: #f5f0e8;
+  --vermillion: #c23616;
+  --mist: #d4cfc4;
+  --slate: #4a4a5a;
+  --gold: #b8860b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* Ink wash background */
+.bg-wash {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(26,26,46,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 80%, rgba(26,26,46,0.04) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 50%, rgba(194,54,22,0.015) 0%, transparent 60%);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+/* Header */
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  border-bottom: 1px solid var(--mist);
+  padding-bottom: 40px;
+  margin-bottom: 60px;
+  animation: fadeUp 1s ease both;
+}
+
+.name-block h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.name-block .subtitle {
+  font-size: 1.1rem;
+  color: var(--slate);
+  margin-top: 8px;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.seal {
+  width: 72px;
+  height: 72px;
+  border: 2px solid var(--vermillion);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.4rem;
+  color: var(--vermillion);
+  font-weight: 700;
+  transform: rotate(-3deg);
+  animation: fadeUp 1s ease 0.3s both;
+}
+
+/* Section style */
+.section {
+  margin-bottom: 50px;
+  animation: fadeUp 0.8s ease both;
+}
+
+.section:nth-child(3) { animation-delay: 0.2s; }
+.section:nth-child(4) { animation-delay: 0.4s; }
+.section:nth-child(5) { animation-delay: 0.6s; }
+
+.section-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--vermillion);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--vermillion);
+  border-radius: 50%;
+}
+
+/* Bio */
+.bio {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: var(--slate);
+}
+
+.bio strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Publication item */
+.pub-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--mist);
+  transition: transform 0.3s ease;
+}
+
+.pub-item:hover {
+  transform: translateX(8px);
+}
+
+.pub-venue {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--vermillion);
+  background: rgba(194,54,22,0.06);
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 2px;
+  align-self: start;
+  margin-top: 4px;
+}
+
+.pub-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.pub-authors {
+  font-size: 0.9rem;
+  color: var(--slate);
+  font-style: italic;
+}
+
+/* Links row */
+.links-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid var(--mist);
+}
+
+.links-row a {
+  font-size: 0.9rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.links-row a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--vermillion);
+  transition: width 0.3s ease;
+}
+
+.links-row a:hover {
+  color: var(--vermillion);
+}
+
+.links-row a:hover::after {
+  width: 100%;
+}
+
+/* Footer */
+.footer-note {
+  margin-top: 60px;
+  font-size: 0.8rem;
+  color: var(--mist);
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+<body>
+<div class="bg-wash"></div>
+<div class="container">
+  <div class="header">
+    <div class="name-block">
+      <h1>彭天硕</h1>
+      <p class="subtitle">PhD Candidate, MMLab @ CUHK</p>
+    </div>
+    <div class="seal">彭</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">About</div>
+    <p class="bio">
+      Research focused on <strong>multi-modal perception and understanding</strong>,
+      building efficient and unified intelligent systems for content understanding
+      and generation across modalities. Currently exploring multi-agent collaboration
+      and visual-language reasoning.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Selected Publications</div>
+    <div class="pub-item">
+      <span class="pub-venue">ICCV 2025</span>
+      <div>
+        <div class="pub-title">Chimera: Improving Generalist Model with Domain-Specific Experts</div>
+        <div class="pub-authors">Tianshuo Peng, Mingsheng Li, et al.</div>
+      </div>
+    </div>
+    <div class="pub-item">
+      <span class="pub-venue">MM 2024</span>
+      <div>
+        <div class="pub-title">Multi-modal Auto-regressive Modeling via Visual Tokens</div>
+        <div class="pub-authors">Tianshuo Peng, Zuchao Li, et al.</div>
+      </div>
+    </div>
+    <div class="pub-item">
+      <span class="pub-venue">AAAI 2024</span>
+      <div>
+        <div class="pub-title">A Novel Energy Based Model Mechanism for Multi-Modal Aspect-Based Sentiment Analysis</div>
+        <div class="pub-authors">Tianshuo Peng, Zuchao Li, et al.</div>
+      </div>
+    </div>
+    <div class="pub-item">
+      <span class="pub-venue">ACL 2023</span>
+      <div>
+        <div class="pub-title">FSUIE: A Novel Fuzzy Span Mechanism for Universal Information Extraction</div>
+        <div class="pub-authors">Tianshuo Peng, Zuchao Li, et al.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="links-row">
+    <a href="#">Google Scholar</a>
+    <a href="#">GitHub</a>
+    <a href="#">CV</a>
+    <a href="#">Email</a>
+  </div>
+
+  <div class="footer-note">STYLE PREVIEW 1 / INK SCHOLAR</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style 2 - Constructivist</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@300;500;700&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fafaf7;
+  --fg: #111;
+  --accent: #0039a6;
+  --accent-light: rgba(0,57,166,0.08);
+  --grid: rgba(0,0,0,0.04);
+  --border: #111;
+  --muted: #666;
+  --highlight: #ff3d00;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Instrument Sans', sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  min-height: 100vh;
+}
+
+/* Grid background */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+/* Top bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 3px solid var(--border);
+  margin-bottom: 60px;
+  animation: slideIn 0.6s ease both;
+}
+
+.top-bar .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.top-bar .year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--highlight);
+  font-weight: 700;
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  margin-bottom: 80px;
+  animation: slideIn 0.6s ease 0.1s both;
+}
+
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 4rem;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 .accent {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.hero-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 12px;
+  border-left: 3px solid var(--border);
+  padding-left: 24px;
+}
+
+.hero-meta .meta-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.hero-meta .meta-value {
+  color: var(--fg);
+  font-weight: 700;
+  display: block;
+  margin-top: 2px;
+  font-size: 0.85rem;
+}
+
+/* Section */
+.section {
+  margin-bottom: 60px;
+  animation: slideIn 0.6s ease both;
+}
+
+.section:nth-child(4) { animation-delay: 0.2s; }
+.section:nth-child(5) { animation-delay: 0.3s; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.section-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--muted);
+  padding-bottom: 2px;
+}
+
+/* Research interests as blocks */
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.interest-block {
+  background: var(--accent-light);
+  border: 1px solid rgba(0,57,166,0.15);
+  padding: 20px 16px;
+  transition: all 0.3s ease;
+}
+
+.interest-block:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.interest-block h3 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.interest-block p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.interest-block:hover p {
+  color: rgba(255,255,255,0.8);
+}
+
+/* Publications */
+.pub-row {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--grid);
+  align-items: baseline;
+  transition: all 0.2s ease;
+}
+
+.pub-row:hover {
+  background: var(--accent-light);
+  padding-left: 12px;
+  margin-left: -12px;
+  padding-right: 12px;
+  margin-right: -12px;
+}
+
+.pub-row:first-child {
+  border-top: 1px solid var(--grid);
+}
+
+.pub-venue-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+.pub-row .title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.pub-row .year-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+/* Bottom links */
+.bottom-links {
+  display: flex;
+  gap: 0;
+  margin-top: 60px;
+  border: 3px solid var(--border);
+}
+
+.bottom-links a {
+  flex: 1;
+  padding: 16px;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--fg);
+  border-right: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.bottom-links a:last-child { border-right: none; }
+
+.bottom-links a:hover {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.footer-note {
+  margin-top: 40px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="container">
+  <div class="top-bar">
+    <span class="label">Academic Portfolio</span>
+    <span class="year">2025</span>
+  </div>
+
+  <div class="hero">
+    <h1>Tianshuo<br><span class="accent">Peng</span></h1>
+    <div class="hero-meta">
+      <div>
+        <span class="meta-item">Affiliation</span>
+        <span class="meta-value">MMLab, CUHK</span>
+      </div>
+      <div>
+        <span class="meta-item">Role</span>
+        <span class="meta-value">PhD Candidate</span>
+      </div>
+      <div>
+        <span class="meta-item">Focus</span>
+        <span class="meta-value">Multi-Modal AI</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-label">Research Interests</span>
+    </div>
+    <div class="interest-grid">
+      <div class="interest-block">
+        <h3>Multi-Agent</h3>
+        <p>Collaboration, planning, and execution in complex scenarios</p>
+      </div>
+      <div class="interest-block">
+        <h3>Multi-Modal</h3>
+        <p>Representation learning, visual-language generation</p>
+      </div>
+      <div class="interest-block">
+        <h3>MLLMs</h3>
+        <p>Visual-language reasoning, instruction following</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-label">Selected Publications</span>
+    </div>
+    <div class="pub-row">
+      <span class="pub-venue-tag">ICCV</span>
+      <span class="title">Chimera: Improving Generalist Model with Domain-Specific Experts</span>
+      <span class="year-tag">2025</span>
+    </div>
+    <div class="pub-row">
+      <span class="pub-venue-tag">ACM MM</span>
+      <span class="title">Multi-modal Auto-regressive Modeling via Visual Tokens</span>
+      <span class="year-tag">2024</span>
+    </div>
+    <div class="pub-row">
+      <span class="pub-venue-tag">AAAI</span>
+      <span class="title">Energy Based Model for Multi-Modal Aspect-Based Sentiment Analysis</span>
+      <span class="year-tag">2024</span>
+    </div>
+    <div class="pub-row">
+      <span class="pub-venue-tag">ACL</span>
+      <span class="title">FSUIE: A Novel Fuzzy Span Mechanism for Universal Information Extraction</span>
+      <span class="year-tag">2023</span>
+    </div>
+  </div>
+
+  <div class="bottom-links">
+    <a href="#">Scholar</a>
+    <a href="#">GitHub</a>
+    <a href="#">CV</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <div class="footer-note">Style Preview 2 / Constructivist</div>
+</div>
+</body>
+</html>
