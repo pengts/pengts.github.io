@@ -316,6 +316,44 @@ a { color: inherit; }
   margin-top: 10px;
 }
 
+.hero-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.hero-card {
+  width: 240px;
+  border: 1px solid var(--line);
+  border-top: none;
+  padding: 12px 14px;
+  text-align: center;
+  background: rgba(245,237,220,.03);
+}
+
+.hero-card-name {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--paper);
+  margin-bottom: 4px;
+}
+
+.hero-card-affil {
+  font-size: 12px;
+  color: rgba(245,237,220,.5);
+  letter-spacing: .04em;
+  margin-bottom: 6px;
+}
+
+.hero-card-email {
+  font-size: 12px;
+  color: rgba(245,237,220,.45);
+  letter-spacing: .02em;
+}
+
 /* === SECTIONS === */
 section {
   padding: 72px 0;
@@ -981,7 +1019,9 @@ section:nth-of-type(3) { animation: fadeIn .6s ease .3s both; }
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
   .hero-content { grid-template-columns: 1fr; }
-  .hero-photo { width: 180px; height: 220px; margin: 0 auto 20px; }
+  .hero-photo { width: 180px; height: 220px; margin: 0 auto 0; }
+  .hero-aside { margin: 0 auto 20px; }
+  .hero-card { width: 180px; }
   .interest-item { grid-template-columns: 1fr; gap: 6px; }
   .pub-entry { grid-template-columns: 80px 1fr; }
   .pub-links { display: none; }
@@ -1080,12 +1120,18 @@ section:nth-of-type(3) { animation: fadeIn .6s ease .3s both; }
           I am always open to potential discussions and collaborations. Please feel free to reach out by <a href="mailto:pengts521@gmail.com">email</a> if you are interested in my work or would like to explore possible collaborations.
         </p>
       </div>
-      <div class="hero-photo">
-        <img src="./assets/img/my_pic_2025-10.JPG" alt="Tianshuo Peng">
-        <span class="coord coord-tl">22.3N 114.2E</span>
-        <span class="coord coord-br">ID:2025-X</span>
+      <div class="hero-aside">
+        <div class="hero-photo">
+          <img src="./assets/img/my_pic_2025-10.JPG" alt="Tianshuo Peng">
+          <span class="coord coord-tl">22.3N 114.2E</span>
+          <span class="coord coord-br">ID:2025-X</span>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-name">Tianshuo Peng</div>
+          <div class="hero-card-affil">MMLab, CUHK</div>
+          <div class="hero-card-email">pengts521[at]gmail.com</div>
+        </div>
       </div>
-      <div class="hero-email">pengts521[at]gmail.com</div>
     </div>
   </div>
 </section>
