@@ -325,32 +325,35 @@ a { color: inherit; }
 
 .hero-card {
   width: 240px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   border-top: none;
-  padding: 12px 14px;
-  text-align: center;
-  background: rgba(245,237,220,.03);
+  padding: 7px 14px;
+  background: rgba(245,237,220,.08);
+  position: relative;
 }
 
-.hero-card-name {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--paper);
-  margin-bottom: 4px;
+.hero-card::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--teal) 0 33.3%, var(--ochre) 33.3% 66.6%, var(--red) 66.6% 100%);
 }
 
 .hero-card-affil {
-  font-size: 12px;
-  color: rgba(245,237,220,.5);
-  letter-spacing: .04em;
-  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--paper);
+  margin-bottom: 3px;
 }
 
 .hero-card-email {
-  font-size: 12px;
-  color: rgba(245,237,220,.45);
+  font-size: 13px;
+  color: rgba(245,237,220,.5);
   letter-spacing: .02em;
 }
 
@@ -1127,7 +1130,6 @@ section:nth-of-type(3) { animation: fadeIn .6s ease .3s both; }
           <span class="coord coord-br">ID:2025-X</span>
         </div>
         <div class="hero-card">
-          <div class="hero-card-name">Tianshuo Peng</div>
           <div class="hero-card-affil">MMLab, CUHK</div>
           <div class="hero-card-email">pengts521[at]gmail.com</div>
         </div>
