@@ -79,6 +79,7 @@ The page builds depth through stacked layers (all via CSS, no images except nois
 - Bio text in natural paragraphs, links with bottom-border underline
 - Collaboration invitation paragraph prefixed by signal-tower SVG icon (three arcs in teal/ochre/red)
 - Photo (240x300px) with subtle dual-gradient overlay and coordinate labels (top-left: lat/long, bottom-right: ID code)
+- Below photo: affiliation/email card — semi-transparent warm background, uppercase bold affiliation, email below, tricolor bottom border (teal/ochre/red, hard boundaries, 4px)
 
 #### Hero Decorative Elements (right side)
 - NOT color stripes. Instead: orbital arcs (dashed/dotted circles rotating slowly), signal blip nodes (tiny glowing dots), vertical datastream ticks, scanline pattern
