@@ -579,6 +579,18 @@ section {
   margin-top: 6px;
 }
 
+#sage-a15 .lead-author {
+  color: var(--ochre);
+  font-weight: 600;
+}
+
+#sage-a15 .summary {
+  font-size: 13px;
+  color: rgba(245,237,220,.65);
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
 .pub-links {
   display: flex;
   gap: 8px;
@@ -1028,6 +1040,7 @@ section:nth-of-type(3) { animation: fadeIn .6s ease .3s both; }
   .interest-item { grid-template-columns: 1fr; gap: 6px; }
   .pub-entry { grid-template-columns: 80px 1fr; }
   .pub-links { display: none; }
+  #sage-a15 .pub-links { display: flex; grid-column: 2; flex-wrap: wrap; }
   .news-item { grid-template-columns: 80px 1fr; }
   .nav-links { gap: 12px; }
   .nav-links .sep, .nav-links .hide-mobile { display: none; }
@@ -1107,7 +1120,7 @@ section:nth-of-type(3) { animation: fadeIn .6s ease .3s both; }
           I am a PhD student at <a href="https://mmlab.ie.cuhk.edu.hk/">MMLab</a>, <a href="https://www.cuhk.edu.hk/">The Chinese University of Hong Kong</a>, supervised by <a href="https://xyue.io/">Prof. Xiangyu Yue</a>. I received my bachelor's degree from <a href="https://cs.whu.edu.cn/">Wuhan University</a>, advised by <a href="https://zcli-charlie.github.io/">Prof. Zuchao Li</a> and <a href="https://scholar.google.com/citations?user=BLKHwNwAAAAJ">Prof. Lefei Zhang</a>.
         </p>
         <p class="hero-bio" style="margin-top:12px;">
-          I am a core member of the <a href="https://internscience.github.io/Agents-A1/">Agents-A1</a> team at <a href="https://www.shlab.org.cn/">Shanghai AI Laboratory</a>, working closely with <a href="https://bobrown.github.io/boZhang.github.io/">Dr. Bo Zhang</a>. My work focuses on leading large-scale mid-training for fundamental agent capabilities, and developing long-horizon deep research tasks.
+          I am a core member of the team behind <a href="https://alpha-innovator.github.io/Sage-A1.5/">Sage-A1.5</a> and <a href="https://internscience.github.io/Agents-A1/">Agents-A1</a> at <a href="https://www.shlab.org.cn/">Shanghai AI Laboratory</a>, working closely with <a href="https://bobrown.github.io/boZhang.github.io/">Dr. Bo Zhang</a>. My work focuses on leading large-scale mid-training for fundamental agent capabilities, and developing long-horizon deep research tasks.
         </p>
         <p class="hero-bio" style="margin-top:12px;">
           My research focuses on <strong>agentic foundation models</strong>, including both <strong>LLMs</strong> and <strong>VLMs</strong>, for executing complex, long-horizon tasks in real-world environments. I am also broadly interested in multimodal reasoning, vision-language representation learning, and unified multimodal models, where I have developed substantial research expertise.
@@ -1169,6 +1182,14 @@ section:nth-of-type(3) { animation: fadeIn .6s ease .3s both; }
   <div class="wrapper">
     <h2 class="section-title"><span>News</span></h2>
     <ul class="news-list">
+      <li class="news-item award">
+        <span class="date">Nov. 2026</span>
+        <span class="content">The six official <a href="https://huggingface.co/collections/InternScience/sage-a15">Sage-A1.5</a> releases recorded <strong>over 1 million downloads in the past month</strong> on Hugging Face (as of Nov. 9).</span>
+      </li>
+      <li class="news-item paper">
+        <span class="date">Oct. 2026</span>
+        <span class="content">We released <strong><a href="https://alpha-innovator.github.io/Sage-A1.5/">Sage-A1.5</a></strong>, a 35B MoE model that combines agentic orchestration and verification for long-horizon problem solving and scientific exploration.</span>
+      </li>
       <li class="news-item paper">
         <span class="date">Jun. 2026</span>
         <span class="content">We released <strong>Agents-A1</strong>, a 35B-scale general agent that approaches trillion-parameter performance on long-horizon agent tasks.</span>
@@ -1230,6 +1251,21 @@ section:nth-of-type(3) { animation: fadeIn .6s ease .3s both; }
   <div class="wrapper">
     <h2 class="section-title"><span>Selected Publications</span></h2>
     <div class="pub-list">
+
+      <div class="pub-entry" id="sage-a15">
+        <div class="pub-venue">Tech Report</div>
+        <div class="pub-body">
+          <div class="title">Sage-A1.5: From Long-Horizon Execution to Scientific Exploration with Capability Composition</div>
+          <div class="authors">Wenjie Lou, <span class="me">Tianshuo Peng</span>, Shiyang Feng, et al.</div>
+          <div class="conference"><span class="lead-author">Lead author</span> · Technical Report, 2026</div>
+          <p class="summary">Building on Agents-A1, Sage-A1.5 learns to coordinate subagents, check evidence, and revise strategies during long-horizon tasks, extending agentic capabilities to scientific exploration.</p>
+        </div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/pdf/2610.28578" class="pub-link">PDF</a>
+          <a href="https://alpha-innovator.github.io/Sage-A1.5/" class="pub-link">Page</a>
+          <a href="https://huggingface.co/InternScience/Sage-A1.5" class="pub-link">Model</a>
+        </div>
+      </div>
 
       <div class="pub-entry">
         <div class="pub-venue">Tech Report</div>
